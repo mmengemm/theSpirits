@@ -64,8 +64,8 @@ dLoc = None
 
 while(dLoc == None):
     playsound(appDIR+"jingle.mp3")# sms
-    dLoc  = pyautogui.locateCenterOnScreen(appDIR+"download.png", confidence=0.9)
     time.sleep(15)
+    dLoc  = pyautogui.locateCenterOnScreen(appDIR+"download.png", confidence=0.9)
 
 pyautogui.click(dLoc)
 
