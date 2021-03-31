@@ -49,7 +49,7 @@ if(not os.path.exists(appDIR)):
 
 time.sleep(3)
 
-cLoc  = pyautogui.locateOnScreen("country.png", confidence=0.7)
+cLoc  = pyautogui.locateOnScreen(appDIR+"country.png", confidence=0.7)
 offset = (cLoc.width/7)
 x, y = pyautogui.center(cLoc)
 pyautogui.click(x+offset, y)
