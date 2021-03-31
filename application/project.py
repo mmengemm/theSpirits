@@ -58,7 +58,7 @@ time.sleep(3)
 
 mLoc  = pyautogui.locateCenterOnScreen(appDIR+"mobile.png", confidence=0.9)
 pyautogui.click(mLoc)
-
+pyautogui.move(200,0)
 
 dLoc = None
 
