@@ -9,7 +9,7 @@ import subprocess
 
 def log(s):
     print("[AutoUBS] "+s)
-    
+
 pips = subprocess.check_output("pip3 list", shell=True, stderr=subprocess.STDOUT)
 
 libs = ["PyAutoGUI", "opencv-python", "playsound"]
@@ -47,16 +47,22 @@ if(not os.path.exists(appDIR)):
     f.write(base64.b64decode(mp3_str))
     f.close()
 
-time.sleep(3)
+cLoc = None
+while(cLoc == None):
+    cLoc  = pyautogui.locateOnScreen(appDIR+"country.png", confidence=0.6)
+    time.sleep(3)
 
-cLoc  = pyautogui.locateOnScreen(appDIR+"country.png", confidence=0.7)
 offset = (cLoc.width/7)
 x, y = pyautogui.center(cLoc)
 pyautogui.click(x+offset, y)
 
-time.sleep(3)
 
-mLoc  = pyautogui.locateCenterOnScreen(appDIR+"mobile.png", confidence=0.9)
+mLoc = None
+
+while(mLoc == None):
+    mLoc = pyautogui.locateCenterOnScreen(appDIR+"mobile.png", confidence=0.9)
+    time.sleep(3)
+    
 pyautogui.click(mLoc)
 pyautogui.move(200,0)
 
