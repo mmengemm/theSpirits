@@ -1,6 +1,6 @@
 # UBS Login script
 
-Script to easy your morning pain
+Script to ease your morning pain
 
 ## Requirements
 
