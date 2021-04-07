@@ -10,7 +10,7 @@ import subprocess
 def log(s):
     print("[AutoUBS] "+s)
     
-pips = subprocess.check_output("pip list", shell=True, stderr=subprocess.STDOUT)
+pips = subprocess.check_output("pip3 list", shell=True, stderr=subprocess.STDOUT)
 
 libs = ["PyAutoGUI", "opencv-python", "playsound"]
 
