@@ -2,7 +2,7 @@
 
 Script to easy your morning pain
 
-## Requirements Python Version 3.6+
+## Requirements
 
 [Python v3.6+](https://www.python.org/downloads/)
 
