@@ -9,8 +9,8 @@ import subprocess
 
 def log(s):
     print("[AutoUBS] "+s)
-
-pips = subprocess.check_output("pip list")
+    
+pips = subprocess.check_output("pip list", shell=True, stderr=subprocess.STDOUT)
 
 libs = ["PyAutoGUI", "opencv-python", "playsound"]
 
