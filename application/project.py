@@ -9,10 +9,10 @@ import subprocess
 
 def log(s):
     print("[AutoUBS] "+s)
-    
+
 pips = subprocess.check_output("pip3 list", shell=True, stderr=subprocess.STDOUT)
 
-libs = ["PyAutoGUI", "opencv-python", "playsound"]
+libs = ["PyAutoGUI", "opencv-python", "playsound", "Pillow"]
 
 for lib in libs:
     if lib in str(pips):
@@ -28,18 +28,23 @@ webbrowser.open("https://workspace-zur3.ra.ubs.com/logon/choose-your-location/in
 
 homeDIR = expanduser("~").replace("\\", "/")
 
-time.sleep(3)
-
 ressources = "../ressources/"
 
-cLoc  = pyautogui.locateOnScreen(ressources+"country.png", confidence=0.7)
+cLoc = None
+while(cLoc == None):
+    cLoc  = pyautogui.locateOnScreen(ressources+"country.png", confidence=0.6)
+    time.sleep(3)
+
 offset = (cLoc.width/7)
 x, y = pyautogui.center(cLoc)
 pyautogui.click(x+offset, y)
 
-time.sleep(3)
+mLoc = None
 
-mLoc  = pyautogui.locateCenterOnScreen(ressources+"mobile.png", confidence=0.9)
+while(mLoc == None):
+    mLoc = pyautogui.locateCenterOnScreen(ressources+"mobile.png", confidence=0.9)
+    time.sleep(3)
+    
 pyautogui.click(mLoc)
 pyautogui.move(200,0)
 
