@@ -16,3 +16,5 @@ python project.py
 Or double click on `project.py`
 
 **Once you here the sound you need to scan the QR code manually**
+
+*The scripts creates a folder `.autoUBS` in your home directory with the required files*
