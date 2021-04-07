@@ -12,7 +12,7 @@ def log(s):
 
 pips = subprocess.check_output("pip3 list", shell=True, stderr=subprocess.STDOUT)
 
-libs = ["PyAutoGUI", "opencv-python", "playsound"]
+libs = ["PyAutoGUI", "opencv-python", "playsound", "Pillow"]
 
 for lib in libs:
     if lib in str(pips):
